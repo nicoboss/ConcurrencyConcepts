@@ -1,0 +1,5 @@
+Java/target/*
+Java/.settings/*
+Java/.classpath
+Java/.project
+*.vscode/

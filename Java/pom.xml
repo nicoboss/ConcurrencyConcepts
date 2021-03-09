@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <groupId>re.nico.wipro</groupId>
+  <artifactId>wipro</artifactId>
+  <version>1.0-SNAPSHOT</version>
+ 
+  <properties>
+    <maven.compiler.source>16</maven.compiler.source>
+    <maven.compiler.target>16</maven.compiler.target>
+    <maven.compiler.release>16</maven.compiler.release>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>re.nico.run</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+            <mainClass>re.nico.run</mainClass>
+            <arguments>
+                <argument>argument1</argument>
+            </arguments>
+        </configuration>
+    </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>re.nico.run</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+ 
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.jboss.logging/jboss-logging -->
+    <dependency>
+      <groupId>org.jboss.logging</groupId>
+      <artifactId>jboss-logging</artifactId>
+      <version>3.4.1.Final</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.jboss.narayana.stm/stm -->
+    <dependency>
+      <groupId>org.jboss.narayana.stm</groupId>
+      <artifactId>stm</artifactId>
+      <version>5.10.6.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-stm</groupId>
+      <artifactId>scala-stm_2.12</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.google.dagger/dagger -->
+    <dependency>
+        <groupId>com.google.dagger</groupId>
+        <artifactId>dagger</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.multiverse</groupId>
+        <artifactId>multiverse-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.4.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.asynchttpclient</groupId>
+    	<artifactId>async-http-client</artifactId>
+      <version>2.12.2</version>
+    </dependency>
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.asynchttpclient</groupId>
+            <artifactId>async-http-client-bom</artifactId>
+            <version>2.12.2</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <!-- https://nbronson.github.io/scala-stm/releases.html#maven -->
+        <dependency>
+            <groupId>org.scala-stm</groupId>
+            <artifactId>scala-stm_2.12</artifactId>
+            <version>0.8</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.dagger/dagger -->
+        <dependency>
+            <groupId>com.google.dagger</groupId>
+            <artifactId>dagger</artifactId>
+            <version>2.16</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.multiverse/multiverse-core -->
+        <dependency>
+            <groupId>org.multiverse</groupId>
+            <artifactId>multiverse-core</artifactId>
+            <version>0.7.0</version>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+
+</project>
