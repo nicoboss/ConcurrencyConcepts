@@ -16,7 +16,9 @@ public class run {
         System.out.println("=============================");
         System.out.println();
 
-        RunCounter.run(new SynchronizedCounter(), 0, 23, 8);
+        RunCounter.run(new SynchronizedMethodsCounter(), 0, 23, 8);
+        RunCounter.run(new SynchronizedThisCounter(), 0, 23, 8);
+        RunCounter.run(new SynchronizedObjectCounter(), 0, 23, 8);
         RunCounter.run(new AtomicCounter(), 0, 23, 8);
         RunCounter.run(new TransactionalCounterMultiverse(), 0, 23, 8);
         RunCounter.run(new TransactionalCounterScala(), 0, 23, 8);

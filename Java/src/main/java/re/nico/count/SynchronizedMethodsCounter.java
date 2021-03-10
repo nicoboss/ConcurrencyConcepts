@@ -1,10 +1,10 @@
 package re.nico.count;
 
-public final class SynchronizedCounter implements Counter {
+public final class SynchronizedMethodsCounter implements Counter {
 
     private volatile int i;
 
-    public SynchronizedCounter() {
+    public SynchronizedMethodsCounter() {
         i = 0;
     }
 
