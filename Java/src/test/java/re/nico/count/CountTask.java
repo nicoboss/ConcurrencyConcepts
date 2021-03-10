@@ -1,8 +1,6 @@
 package re.nico.count;
 
-import java.util.concurrent.Callable;
-
-public class CountTask implements Callable<Integer> {
+public class CountTask implements Runnable {
 
     private final Counter counter;
     private final int counts;
@@ -11,15 +9,14 @@ public class CountTask implements Callable<Integer> {
         this.counter = counter;
         this.counts = counts;
     }
-
+    
     @Override
-    public Integer call() throws Exception {
+    public void run() {
         for (int i = 0; i < counts; ++i) {
             counter.increment();
         }
         for (int i = 0; i < counts; ++i) {
             counter.decrement();
         }
-        return counter.get();
     }
 }
