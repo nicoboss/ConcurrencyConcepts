@@ -3,11 +3,10 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace CoroutinesRandom
 {
-    class Program
+    class CoroutinesRandom
     {
-
         //Basieren auf C++ splitmix PRNG von Arvid Gerstmann.
         private static IEnumerable<ulong> prng(ulong seed)
         {
@@ -17,7 +16,7 @@ namespace ConsoleApp1
                 ulong z = seed;
                 z = (z ^ (z >> 30)) * 0xBF58476D1CE4E5B9;
                 z = (z ^ (z >> 27)) * 0x94D049BB133111EB;
-                Console.WriteLine("Generated!");
+                Console.WriteLine("[Coroutine] Generated!");
                 yield return (z ^ (z >> 31)) >> 31;
             }
         }
