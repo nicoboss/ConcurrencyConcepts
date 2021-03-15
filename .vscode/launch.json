@@ -13,7 +13,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${fileWorkspaceFolder}/${relativeFileDirname}/bin/Debug/net5.0/prng.dll",
+            "program": "${fileWorkspaceFolder}/${relativeFileDirname}/bin/Debug/net5.0/project.dll",
             "args": [],
             "cwd": "${fileWorkspaceFolder}/${relativeFileDirname}",
             "console": "internalConsole",
