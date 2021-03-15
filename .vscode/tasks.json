@@ -3,7 +3,7 @@
     "tasks": [
         {
             "label": "build",
-            "command": "dotnet build",
+            "command": "dotnet build /p:StartupObject=${fileBasenameNoExtension}.${fileBasenameNoExtension}",
             "type": "shell",
             "group": "build",
             "options": {
