@@ -1,6 +1,8 @@
-/ObjectStore/*
-Java/target/*
-Java/.settings/*
-Java/.classpath
-Java/.project
-*.vscode/
+ObjectStore
+target
+.settings
+.classpath
+.project
+obj
+bin
+.vs

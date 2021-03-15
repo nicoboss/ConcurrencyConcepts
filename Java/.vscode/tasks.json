@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "runmaven",
+            "command": "mvn",
+            "args": [
+                "exec:java",
+                "-f",
+                "c:\\Users\\Administrator\\Documents\\Projects\\WIPRO\\Java\\pom.xml"
+            ],
+            "type": "shell"
+        }
+    ]
+}
