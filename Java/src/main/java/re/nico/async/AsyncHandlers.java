@@ -12,7 +12,7 @@ import org.asynchttpclient.util.HttpUtils;
 
 import io.netty.handler.codec.http.HttpHeaders;
 
-public class AsyncHandlersDemo {
+public class AsyncHandlers {
 
     public static void run() {
         Future<Integer> asyncHandler = asyncHttpClient().prepareGet("http://www.nicobosshard.ch/Hi.html")

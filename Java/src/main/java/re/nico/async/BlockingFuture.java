@@ -5,7 +5,7 @@ import java.util.concurrent.Future;
 import org.asynchttpclient.Response;
 import static org.asynchttpclient.Dsl.*;
 
-public class BlockingFutureDemo {
+public class BlockingFuture {
 
     public static void run() {
         try {

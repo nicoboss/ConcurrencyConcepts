@@ -17,7 +17,7 @@ import java.util.concurrent.CountDownLatch;
 
 import static org.asynchttpclient.Dsl.asyncHttpClient;
 
-public class ReactiveStreamsDemo {
+public class ReactiveStreams {
 
     public static void run() {
         try {

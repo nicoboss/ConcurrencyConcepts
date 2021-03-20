@@ -6,12 +6,12 @@ public class run {
     public static void main(String[] args)
     {
 
-        BlockingFutureDemo.run();
-        ContinuationsDemo.run();
-        CompletableFutureDemo.run();
+        BlockingFuture.run();
+        CompletableFutureBranchless.run();
+        CompletableFuture.run();
         ListenableFutureDemo.run();
-        AsyncHandlersDemo.run();
-        ReactiveStreamsDemo.run();
+        CompletableFutureBranchless.run();
+        ReactiveStreams.run();
         System.out.println("=============================");
         System.out.println();
 

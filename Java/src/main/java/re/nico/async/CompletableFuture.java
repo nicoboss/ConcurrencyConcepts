@@ -1,10 +1,9 @@
 package re.nico.async;
 import org.asynchttpclient.AsyncHttpClient;
-import org.asynchttpclient.Response;
 import java.io.IOException;
 import static org.asynchttpclient.Dsl.asyncHttpClient;
 
-public class ContinuationsDemo {
+public class CompletableFuture {
  
   public static void run()  {
     try (AsyncHttpClient asyncHttpClient = asyncHttpClient()) {
@@ -12,12 +11,14 @@ public class ContinuationsDemo {
               .prepareGet("http://www.nicobosshard.ch/Hi.html")
               .execute()
               .toCompletableFuture()
-              .thenApply(Response::getResponseBody)
-              .thenAccept(System.out::println)
+              .whenComplete((result, ex) -> {
+                System.out.println(result.getResponseBody());
+                if (result.getStatusCode() == 200) System.out.println("Done!");
+                if (ex != null) ex.printStackTrace();
+              })
               .join();
     } catch (IOException e) {
       e.printStackTrace();
     }
-    System.out.println("Done!");
   }
 }
