@@ -14,7 +14,7 @@
             "request": "launch",
             "cwd": "${fileWorkspaceFolder}/${relativeFileDirname}/../../..",
             "arguments": "",
-            "preLaunchTask": "rebar3 compile"
+            "preLaunchTask": "rebar3"
         },
         {
             "name": "Launch C#",

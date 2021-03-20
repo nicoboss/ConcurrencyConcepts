@@ -18,14 +18,28 @@
             "label": "rebar3 compile",
             "type": "shell",
             "command": "rebar3 compile",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "options": {
                 "cwd": "${fileWorkspaceFolder}/${relativeFileDirname}/../../.."
             },
             "problemMatcher": "$erlang"
+        },
+        {
+            "label": "rebar3 shell",
+            "type": "shell",
+            "command": "rebar3 shell",
+            "group": "build",
+            "options": {
+                "cwd": "${fileWorkspaceFolder}/${relativeFileDirname}/../../.."
+            },
+            "problemMatcher": "$erlang"
+        },
+        {
+            "label": "rebar3",
+            "dependsOn": [
+                "rebar3 compile",
+                "rebar3 shell"
+            ]
         }
     ]
 }
