@@ -9,10 +9,18 @@
             "program": "${file}"
         },
         {
-            "name": ".NET Core Launch (console)",
+            "name": "Launch Erlang",
+            "type": "erlang",
+            "request": "launch",
+            "cwd": "${fileWorkspaceFolder}/${relativeFileDirname}/../../..",
+            "arguments": "",
+            "preLaunchTask": "rebar3 compile"
+        },
+        {
+            "name": "Launch C#",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "dotnet build",
             "program": "${fileWorkspaceFolder}/${relativeFileDirname}/bin/Debug/net5.0/project.dll",
             "args": [],
             "cwd": "${fileWorkspaceFolder}/${relativeFileDirname}",

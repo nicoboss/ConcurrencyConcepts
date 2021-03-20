@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "dotnet build",
             "command": "dotnet build /p:StartupObject=${fileBasenameNoExtension}.${fileBasenameNoExtension}",
             "type": "shell",
             "group": "build",
@@ -13,6 +13,19 @@
                 "reveal": "silent"
             },
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "rebar3 compile",
+            "type": "shell",
+            "command": "rebar3 compile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${fileWorkspaceFolder}/${relativeFileDirname}/../../.."
+            },
+            "problemMatcher": "$erlang"
         }
     ]
 }
