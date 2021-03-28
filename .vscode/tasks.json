@@ -40,6 +40,15 @@
                 "rebar3 compile",
                 "rebar3 shell"
             ]
-        }
+        },
+        {
+            "label": "haskell build",
+            "type": "shell",
+            "command": "ghc -o ${fileBasenameNoExtension} ${file}",
+            "group": "build",
+            "options": {
+                "cwd": "${fileWorkspaceFolder}/${relativeFileDirname}"
+            }
+        },
     ]
 }
