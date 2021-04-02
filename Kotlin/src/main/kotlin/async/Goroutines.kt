@@ -1,12 +1,12 @@
 import java.net.*;
 import channel.*
 
-suspend fun getGoogle(c: SendChannel<String>) {
-	c.send(URL("http://www.nicobosshard.ch/Hi.html").readText())
+suspend fun httpGetSingle(result: SendChannel<String>) {
+	result.send(URL("http://www.nicobosshard.ch/Hi.html").readText())
 }
 
 suspend fun goroutines(): String {
-	val c = Channel<String>()
-	go { getGoogle(c) }
-	return(c.receive())
+	val result = Channel<String>()
+	go { httpGetSingle(result) }
+	return(result.receive())
 }

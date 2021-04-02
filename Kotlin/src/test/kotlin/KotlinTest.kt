@@ -18,6 +18,14 @@ class KotlinTest {
 		println("testGoroutines Done!")
 	}
 
+    @Test
+	fun testMultibleGoroutines() {
+		mainBlocking {
+			multibleGoroutines()
+		}
+		println("testMultibleGoroutines Done!")
+	}
+
 	@Test
 	fun testGoroutinesRandom() {
 		mainBlocking {
