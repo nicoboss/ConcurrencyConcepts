@@ -5,7 +5,7 @@ import channel.*
 suspend fun random(seed_arg: ULong, c: SendChannel<ULong>) {
 	var seed = seed_arg;
 	while (true) {
-		seed = 0x9E3779B97F4A7C15u
+		seed += 0x9E3779B97F4A7C15u
 		var z = seed
 		z = (z xor (z shr 30)) * 0xBF58476D1CE4E5B9u
 		z = (z xor (z shr 27)) * 0x94D049BB133111EBu
