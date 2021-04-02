@@ -10,6 +10,7 @@ class KotlinTest {
 
 	@Test
 	fun testGoroutines() {
+        println("testGoroutines:")
 		var realResult: String = ""
 		mainBlocking {
 			realResult = goroutines()
@@ -20,18 +21,28 @@ class KotlinTest {
 
     @Test
 	fun testMultibleGoroutines() {
+        println("testMultibleGoroutines:")
 		mainBlocking {
 			multibleGoroutines()
 		}
 		println("testMultibleGoroutines Done!")
 	}
 
+    @Test
+	fun testmultibleGoroutinesBlocking() {
+        println("testMultibleGoroutines:")
+		mainBlocking {
+			multibleGoroutinesBlocking()
+		}
+		println("testMultibleGoroutines Done!")
+	}
+
 	@Test
 	fun testGoroutinesRandom() {
+        println("testGoroutinesRandom:")
 		mainBlocking {
 			goroutinesRandom()
 		}
-		println("testGoroutinesRandom Done!")
 	}
 	
 }
