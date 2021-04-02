@@ -6,24 +6,24 @@ import channel.*
 
 class KotlinTest {
 
-    var expectedResponse: String = "<html><body>Hi!</body></html>"
+	var expectedResponse: String = "<html><body>Hi!</body></html>"
 
-    @Test
-    fun testGoroutines() {
-        var realResult: String = ""
-        mainBlocking {
-            realResult = goroutines()
-        }
-        assertEquals(expectedResponse, realResult)
-        println("testGoroutines Done!")
-    }
+	@Test
+	fun testGoroutines() {
+		var realResult: String = ""
+		mainBlocking {
+			realResult = goroutines()
+		}
+		assertEquals(expectedResponse, realResult)
+		println("testGoroutines Done!")
+	}
 
-    @Test
-    fun testGoroutinesRandom() {
-        mainBlocking {
-            goroutinesRandom()
-        }
-        println("testGoroutinesRandom Done!")
-    }
-    
+	@Test
+	fun testGoroutinesRandom() {
+		mainBlocking {
+			goroutinesRandom()
+		}
+		println("testGoroutinesRandom Done!")
+	}
+	
 }
