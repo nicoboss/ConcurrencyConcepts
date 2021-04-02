@@ -43,6 +43,16 @@ class KotlinTest {
 		mainBlocking {
 			goroutinesRandom()
 		}
+        println("testGoroutinesRandom Done!")
+	}
+
+    @Test
+	fun testGoroutinesRandomYield() {
+        println("testGoroutinesRandomYield:")
+		mainBlocking {
+			goroutinesRandomYield()
+		}
+        println("testGoroutinesRandomYield Done!")
 	}
 	
 }
