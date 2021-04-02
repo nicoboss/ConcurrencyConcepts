@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 import channel.*
 
-class AsyncTest {
+class KotlinTest {
 
     var expectedResponse: String = "<html><body>Hi!</body></html>"
 
@@ -15,6 +15,15 @@ class AsyncTest {
             realResult = goroutines()
         }
         assertEquals(expectedResponse, realResult)
-        println("Done!")
+        println("testGoroutines Done!")
     }
+
+    @Test
+    fun testGoroutinesRandom() {
+        mainBlocking {
+            goroutinesRandom()
+        }
+        println("testGoroutinesRandom Done!")
+    }
+    
 }
