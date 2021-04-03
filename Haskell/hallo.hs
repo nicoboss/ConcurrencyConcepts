@@ -1,8 +1,9 @@
 module Main where
 
 import qualified Control.Concurrent.STM as T
-import Control.Monad (forM_)
-import Control.Concurrent (forkIO, threadDelay)
+import Control.Monad (forM)
+import Control.Concurrent (forkFinally)
+import Control.Concurrent.MVar
 
 type Counter = T.TMVar Integer
     
@@ -30,13 +31,17 @@ plusCounter counter value = do
     let newValue = (oldValue + value)
     T.putTMVar counter newValue
 
-sleepMs n = threadDelay (n * 1000)
+forkThread :: IO () -> IO (MVar ())
+forkThread proc = do
+    handle <- newEmptyMVar
+    _ <- forkFinally proc (\_ -> putMVar handle ())
+    return handle
 
 main :: IO ()
 main = do
     counter <- T.atomically (newCounter 0)
-    threads <- forM_ [1..1000000] $ \_ -> do
-        forkIO $ T.atomically (incrementCounter counter)
-    sleepMs 1000
+    threads <- forM [1..1000000] $ \_ -> do
+        forkThread $ T.atomically (incrementCounter counter)
+    mapM_ takeMVar threads -- Wait for all threads to finish
     value <- T.atomically $ getCounter counter
     print $ value
