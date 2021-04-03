@@ -10,3 +10,4 @@ bin
 *.exe
 *.hi
 *.o
+*.class
