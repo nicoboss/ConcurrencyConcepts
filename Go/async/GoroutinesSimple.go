@@ -15,6 +15,7 @@ func main() {
 		result <- string(bodyBytes)
 		response.Body.Close()
 	}(url)
+	fmt.Println("Task läuft...")
 	value := <-result //Wartet auf Goroutine
 	fmt.Println(value)
 	close(result)

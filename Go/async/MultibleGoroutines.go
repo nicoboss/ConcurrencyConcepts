@@ -19,18 +19,17 @@ func main() {
 			response, err := http.Get(url)
 			if err != nil {
 				log.Fatal("HTTP get error: ", err)
-			} else {
-				defer response.Body.Close()
-				bodyBytes, err := ioutil.ReadAll(response.Body)
-				if err != nil {
-					log.Fatal("HTTP ReadAll error: ", err)
-				} else {
-					result <- string(bodyBytes)
-				}
 			}
+			defer response.Body.Close()
+			bodyBytes, err := ioutil.ReadAll(response.Body)
+			if err != nil {
+				log.Fatal("HTTP ReadAll error: ", err)
+			}
+			result <- string(bodyBytes)
 			<-guard
 		}(url)
 	}
+	fmt.Println("Task läuft...")
 	for i := 0; i < tasks; i++ {
 		value := <-result //Wartet auf nächste Goroutine
 		fmt.Println(value)
