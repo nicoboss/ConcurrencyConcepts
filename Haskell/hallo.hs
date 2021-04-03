@@ -15,20 +15,10 @@ getCounter counter = do
     value <- T.takeTMVar counter
     return value
 
-setCounter :: Counter -> Integer -> T.STM ()
-setCounter counter value = do
-    T.putTMVar counter value
-
 incrementCounter :: Counter -> T.STM ()
 incrementCounter counter = do
     oldValue <- T.takeTMVar counter
     let newValue = (oldValue + 1)
-    T.putTMVar counter newValue
-
-plusCounter :: Counter -> Integer -> T.STM ()
-plusCounter counter value = do
-    oldValue <- T.takeTMVar counter
-    let newValue = (oldValue + value)
     T.putTMVar counter newValue
 
 forkThread :: IO () -> IO (MVar ())
