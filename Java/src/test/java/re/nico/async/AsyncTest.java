@@ -33,4 +33,29 @@ final class AsyncTest {
         assertEquals(expectedResponse, ReactiveStreams.run());
     }
 
+    @Test
+    void testFixedThreadPoolDemo() {
+        FixedThreadPoolDemo.run();
+    }
+
+    @Test
+    void testCachedThreadPoolDemo() {
+        CachedThreadPoolDemo.run();
+    }
+
+    @Test
+    void testForkJoinPoolDemo() {
+        ForkJoinPoolDemo.run();
+    }
+
+    @Test
+    void testSingleThreadExecutorDemo() {
+        SingleThreadExecutorDemo.run();
+    }
+
+    @Test
+    void testSingleThreadScheduledExecutorDemo() throws InterruptedException {
+        SingleThreadScheduledExecutorDemo.run();
+    }
+
 }
