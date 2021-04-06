@@ -7,7 +7,7 @@ suspend fun httpGetMultibleBlocking(result: SendChannel<String>) {
 	result.send(URL("http://www.nicobosshard.ch/Hi.html").readText())
 }
 
-suspend fun multibleGoroutinesBlocking() {
+suspend fun multibleCoroutinesBlocking() {
 	var tasks = 10        //10 Downloads
 	var maxGoroutines = 4 //Maximal 4 gleichzeitige Gorutines
 	val guard = Semaphore(maxGoroutines)
