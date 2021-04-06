@@ -29,7 +29,7 @@ forkThread proc = do
 
 main :: IO ()
 main = do
-    counter <- T.atomically (newCounter 0)
+    counter <- T.atomically (newCounter 1)
     threads <- forM [1..1000000] $ \_ -> do
         forkThread $ T.atomically (incrementCounter counter)
     mapM_ takeMVar threads -- Wait for all threads to finish
