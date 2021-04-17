@@ -64,6 +64,12 @@
   </build>
  
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/io.reactivex.rxjava3/rxjava -->
+    <dependency>
+      <groupId>io.reactivex.rxjava3</groupId>
+      <artifactId>rxjava</artifactId>
+      <version>3.0.12</version>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/org.jboss.logging/jboss-logging -->
     <dependency>
       <groupId>org.jboss.logging</groupId>
