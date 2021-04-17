@@ -9,50 +9,50 @@ class KotlinTest {
 	var expectedResponse: String = "<html><body>Hi!</body></html>"
 
 	@Test
-	fun testGoroutines() {
-        println("testGoroutines:")
+	fun testCoroutines() {
+        println("testCoroutines:")
 		var realResult: String = ""
 		mainBlocking {
-			realResult = goroutines()
+			realResult = coroutines()
 		}
 		assertEquals(expectedResponse, realResult)
-		println("testGoroutines Done!")
+		println("testCoroutines Done!")
 	}
 
     @Test
-	fun testMultibleGoroutines() {
-        println("testMultibleGoroutines:")
+	fun testMultibleCoroutines() {
+        println("testMultibleCoroutines:")
 		mainBlocking {
-			multibleGoroutines()
+			multibleCoroutines()
 		}
-		println("testMultibleGoroutines Done!")
+		println("testMultibleCoroutines Done!")
 	}
 
     @Test
-	fun testmultibleGoroutinesBlocking() {
-        println("testMultibleGoroutines:")
+	fun testmultibleCoroutinesBlocking() {
+        println("testMultibleCoroutines:")
 		mainBlocking {
-			multibleGoroutinesBlocking()
+			multibleCoroutinesBlocking()
 		}
-		println("testMultibleGoroutines Done!")
+		println("testMultibleCoroutines Done!")
 	}
 
 	@Test
-	fun testGoroutinesRandom() {
-        println("testGoroutinesRandom:")
+	fun testCoroutinesRandom() {
+        println("testCoroutinesRandom:")
 		mainBlocking {
-			goroutinesRandom()
+			coroutinesRandom()
 		}
-        println("testGoroutinesRandom Done!")
+        println("testCoroutinesRandom Done!")
 	}
 
     @Test
-	fun testGoroutinesRandomYield() {
-        println("testGoroutinesRandomYield:")
+	fun testCoroutinesRandomYield() {
+        println("testCoroutinesRandomYield:")
 		mainBlocking {
-			goroutinesRandomYield()
+			coroutinesRandomYield()
 		}
-        println("testGoroutinesRandomYield Done!")
+        println("testCoroutinesRandomYield Done!")
 	}
 	
 }
