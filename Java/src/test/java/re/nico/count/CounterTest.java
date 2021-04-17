@@ -5,6 +5,11 @@ import org.junit.jupiter.api.Test;
 final class CounterTest {
 
     @Test
+    void testReactiveCounter() {
+        ReactiveCounter.run();
+    }
+
+    @Test
     void testSynchronizedMethodsCounter() {
         RunCounter.run(new SynchronizedMethodsCounter(), 23, 8);
     }
