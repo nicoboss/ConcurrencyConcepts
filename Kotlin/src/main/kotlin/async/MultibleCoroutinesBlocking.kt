@@ -8,8 +8,8 @@ suspend fun httpGetMultibleBlocking(result: SendChannel<String>) {
 }
 
 suspend fun multibleCoroutinesBlocking() {
-	var tasks = 10        //10 Downloads
-	var maxGoroutines = 4 //Maximal 4 gleichzeitige Gorutines
+	val tasks = 10        //10 Downloads
+	val maxGoroutines = 4 //Maximal 4 gleichzeitige Gorutines
 	val guard = Semaphore(maxGoroutines)
 	val result = Channel<String>(tasks)
 	mainBlocking {

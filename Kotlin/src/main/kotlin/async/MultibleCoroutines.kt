@@ -7,9 +7,9 @@ suspend fun httpGetMultible(result: SendChannel<String>) {
 }
 
 suspend fun multibleCoroutines() {
-	var tasks = 10        //10 Downloads
-	var maxGoroutines = 4 //Maximal 4 gleichzeitige Gorutines
-	val guard = Semaphore(maxGoroutines)
+	val tasks = 10        //10 Downloads
+	val maxCoroutines = 4 //Maximal 4 gleichzeitige Corutines
+	val guard = Semaphore(maxCoroutines)
 	val result = Channel<String>(tasks)
 	for (i in 1..tasks) {
 		guard.acquireUninterruptibly()

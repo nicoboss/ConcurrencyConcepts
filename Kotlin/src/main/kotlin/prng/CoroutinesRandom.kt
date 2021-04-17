@@ -15,8 +15,8 @@ suspend fun random(seed_arg: ULong, c: SendChannel<ULong>) {
 }
 
 suspend fun coroutinesRandom() {
-	var cache = 10
-	var tasks = 100
+	val cache = 10
+	val tasks = 100
 	val c = Channel<ULong>(cache)
 	go { random(1u, c) }
 	for (i in 0..tasks) {
