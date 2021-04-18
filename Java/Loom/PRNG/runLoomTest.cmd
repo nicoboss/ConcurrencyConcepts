@@ -5,6 +5,6 @@ javac .\LoomContinuationPRNG.java
 cls
 java LoomPRNG
 java LoomSingleThreadedContinuationPRNG
-java LoomContinuationPRNG.java
+java LoomContinuationPRNG
 pause
 goto start
