@@ -24,7 +24,7 @@ public class ReactiveStreams {
 
     public static String run() throws InterruptedException, ExecutionException, Throwable {
         ListenableFuture<MyHandler> future = asyncHttpClient().prepareGet("http://www.nicobosshard.ch/Hi.html")
-                .execute(new MyHandler());
+            .execute(new MyHandler());
         System.out.println("[CompletableFuture] Main vor Task: " + Thread.currentThread().getName());
         BigInteger.probablePrime(256, new Random()); // Task während Request
         System.out.println("[CompletableFuture] Main nach Task: " + Thread.currentThread().getName());
@@ -34,55 +34,41 @@ public class ReactiveStreams {
 
     static protected class MyHandler implements StreamedAsyncHandler<MyHandler> {
         private final MySubscriber<HttpResponseBodyPart> sub;
-
         MyHandler() {
             this(new MySubscriber<>());
             System.out.println("[ReactiveStreams] [Handler] Constructor: " + Thread.currentThread().getName());
         }
-
         MyHandler(MySubscriber<HttpResponseBodyPart> sub) {
             System.out.println(
                     "[ReactiveStreams] [Handler] Constructor mit Subscriber: " + Thread.currentThread().getName());
             this.sub = sub;
         }
-
-        @Override
-        public State onStream(Publisher<HttpResponseBodyPart> pub) {
+        @Override public State onStream(Publisher<HttpResponseBodyPart> pub) {
             System.out.println("[ReactiveStreams] [Handler] onStream: " + Thread.currentThread().getName());
             pub.subscribe(sub);
             return State.CONTINUE;
         }
-
-        @Override
-        public void onThrowable(Throwable t) {
+        @Override public void onThrowable(Throwable t) {
             System.out.println("[ReactiveStreams] [Handler] onThrowable: " + Thread.currentThread().getName());
             throw new AssertionError(t);
         }
-
-        @Override
-        public State onBodyPartReceived(HttpResponseBodyPart part) {
+        @Override public State onBodyPartReceived(HttpResponseBodyPart part) {
             System.out.println("[ReactiveStreams] [Handler] onBodyPartReceived: " + Thread.currentThread().getName());
             throw new AssertionError("Should not have received body part");
         }
 
-        @Override
-        public State onStatusReceived(HttpResponseStatus statusCode) {
+        @Override public State onStatusReceived(HttpResponseStatus statusCode) {
             System.out.println("[ReactiveStreams] [Handler] onStatusReceived: " + Thread.currentThread().getName());
             return State.CONTINUE;
         }
-
-        @Override
-        public State onHeadersReceived(HttpHeaders headers) {
+        @Override public State onHeadersReceived(HttpHeaders headers) {
             System.out.println("[ReactiveStreams] [Handler] onHeadersReceived: " + Thread.currentThread().getName());
             return State.CONTINUE;
         }
-
-        @Override
-        public MyHandler onCompleted() {
+        @Override public MyHandler onCompleted() {
             System.out.println("[ReactiveStreams] [Handler] onCompleted: " + Thread.currentThread().getName());
             return this;
         }
-
         public byte[] getBytes() throws Throwable {
             System.out.println("[ReactiveStreams] [Handler] getBytes: " + Thread.currentThread().getName());
             List<HttpResponseBodyPart> parts = sub.getElements();
@@ -99,34 +85,25 @@ public class ReactiveStreams {
         private final CountDownLatch latch = new CountDownLatch(1);
         private volatile Subscription subscription;
         private volatile Throwable error;
-
-        @Override
-        public void onSubscribe(Subscription subscription) {
+        @Override public void onSubscribe(Subscription subscription) {
             System.out.println("[ReactiveStreams] [Subscriber] onSubscribe: " + Thread.currentThread().getName());
             this.subscription = subscription;
             subscription.request(1);
         }
-
-        @Override
-        public void onNext(T t) {
+        @Override public void onNext(T t) {
             System.out.println("[ReactiveStreams] [Subscriber] onNext: " + Thread.currentThread().getName());
             elements.add(t);
             subscription.request(1);
         }
-
-        @Override
-        public void onError(Throwable error) {
+        @Override public void onError(Throwable error) {
             System.out.println("[ReactiveStreams] [Subscriber] onError: " + Thread.currentThread().getName());
             this.error = error;
             latch.countDown();
         }
-
-        @Override
-        public void onComplete() {
+        @Override public void onComplete() {
             System.out.println("[ReactiveStreams] [Subscriber] onComplete: " + Thread.currentThread().getName());
             latch.countDown();
         }
-
         public List<T> getElements() throws Throwable {
             System.out.println(
                     "[ReactiveStreams] [Subscriber] getElements vor await: " + Thread.currentThread().getName());

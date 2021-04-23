@@ -15,7 +15,6 @@ random channel seed = do
     putMVar channel result
     putStrLn "Generated!"
     random channel currentSeed
-
 main = do
     channel <- newEmptyMVar
     forkIO $ random channel 0

@@ -21,7 +21,6 @@ main = do
             writeChan channel result
             putStrLn "Generated!"
         )
-    
     forM_ [1..100] $ \_ -> do
         threadDelay (1000)
         signalQSem guard

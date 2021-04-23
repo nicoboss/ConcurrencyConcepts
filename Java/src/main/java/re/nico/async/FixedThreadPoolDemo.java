@@ -20,7 +20,8 @@ public class FixedThreadPoolDemo {
         for (int i = 0; i < 10; ++i) {
             completionService.submit(() -> {
                 System.out.println("[FixedThreadPoolDemo] Request von " + Thread.currentThread().getName());
-                return new BufferedReader(new InputStreamReader(new URL("http://www.nicobosshard.ch/Hi.html").openStream())).lines().collect(Collectors.joining("\n"));
+                return new BufferedReader(new InputStreamReader(new URL("http://www.nicobosshard.ch/Hi.html")
+                           .openStream())).lines().collect(Collectors.joining("\n"));
             });
         }
         System.out.println("[FixedThreadPoolDemo] Main vor Task: " + Thread.currentThread().getName());

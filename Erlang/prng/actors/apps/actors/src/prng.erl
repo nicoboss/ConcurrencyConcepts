@@ -1,6 +1,5 @@
 -module(prng).
 -export([prng/1]).
-
 send_msgs(_, 0, _) -> true; % Rekursionsabbruch
 send_msgs(Consumer,
           Count,
@@ -11,7 +10,6 @@ send_msgs(Consumer,
 	Result = (Z2 bxor (Z2 bsr 31)) bsr 31,
     Consumer ! {rand, Result}, % Increment message senden
     send_msgs(Consumer, Count - 1, SeedNew). % Rekursiever Aufruff
-
 prng(Seed) ->
     io:fwrite("Start Generating...\n"),
     Consumer = spawn(consumer, consumer, []),

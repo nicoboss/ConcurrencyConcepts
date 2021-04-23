@@ -9,7 +9,6 @@ namespace TasksRandom
         public static void Main()
         {
             ConcurrentQueue<ulong> result = new ConcurrentQueue<ulong>();
-
             Task.Run(() =>
               {
                   ulong seed = 0;
@@ -24,7 +23,6 @@ namespace TasksRandom
                       Console.WriteLine("[TASK] Generated!");
                       result.Enqueue((z ^ (z >> 31)) >> 31);
                   }
-
               });
             ulong randomNumber;
             for (int i = 0; i < 100; ++i)

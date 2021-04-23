@@ -5,7 +5,6 @@ import java.util.concurrent.Semaphore
 suspend fun httpGetMultible(result: SendChannel<String>) {
 	result.send(URL("http://www.nicobosshard.ch/Hi.html").readText())
 }
-
 suspend fun multibleCoroutines() {
 	val tasks = 10        //10 Downloads
 	val maxCoroutines = 4 //Maximal 4 gleichzeitige Corutines

@@ -16,12 +16,10 @@ random channel seed = do
     atomically $ writeTChan channel result
     putStrLn "Generated!"
     random channel currentSeed
-
 main :: IO ()
 main = do
     channel <- atomically $ newTChan
     forkIO $ random channel 0
-    
     forM_ [1..100] $ \_ -> do
         threadDelay (1000)
         x <- atomically $ readTChan channel

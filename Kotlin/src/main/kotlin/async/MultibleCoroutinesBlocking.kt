@@ -6,7 +6,6 @@ import kotlin.coroutines.*
 suspend fun httpGetMultibleBlocking(result: SendChannel<String>) {
 	result.send(URL("http://www.nicobosshard.ch/Hi.html").readText())
 }
-
 suspend fun multibleCoroutinesBlocking() {
 	val tasks = 10        //10 Downloads
 	val maxGoroutines = 4 //Maximal 4 gleichzeitige Gorutines

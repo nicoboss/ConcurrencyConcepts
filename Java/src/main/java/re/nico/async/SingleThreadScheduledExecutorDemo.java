@@ -19,7 +19,6 @@ import java.math.BigInteger;
 public class SingleThreadScheduledExecutorDemo {
 
     static BlockingQueue<String> blockingQueue = new LinkedBlockingDeque<>();
-
     public static void run() throws InterruptedException {
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
         final ScheduledFuture<?> promise = executor.scheduleAtFixedRate(() -> {
