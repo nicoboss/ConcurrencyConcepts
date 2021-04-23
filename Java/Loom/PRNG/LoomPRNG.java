@@ -7,9 +7,9 @@ public class LoomPRNG {
 		BlockingQueue<Long> queue = new ArrayBlockingQueue<>(10);
 		var a = Thread.startVirtualThread(() -> {
 			var seed = 1;
-            long ulong1 = Long.parseUnsignedLong("11400714819323198485");
-            long ulong2 = Long.parseUnsignedLong("13787848793156543929");
-            long ulong3 = Long.parseUnsignedLong("10723151780598845931");
+            final long ulong1 = Long.parseUnsignedLong("11400714819323198485");
+            final long ulong2 = Long.parseUnsignedLong("13787848793156543929");
+            final long ulong3 = Long.parseUnsignedLong("10723151780598845931");
             while(true) {
                 seed += ulong1;
                 long z = seed;

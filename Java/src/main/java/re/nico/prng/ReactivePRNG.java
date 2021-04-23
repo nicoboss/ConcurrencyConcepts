@@ -9,9 +9,9 @@ public void run() throws InterruptedException {
 	Flowable.fromCallable(() -> {
 		// Basieren auf C++ splitmix PRNG von Arvid Gerstmann.
 		var seed = 1;
-		long ulong1 = Long.parseUnsignedLong("11400714819323198485");
-		long ulong2 = Long.parseUnsignedLong("13787848793156543929");
-		long ulong3 = Long.parseUnsignedLong("10723151780598845931");
+		final long ulong1 = Long.parseUnsignedLong("11400714819323198485");
+		final long ulong2 = Long.parseUnsignedLong("13787848793156543929");
+		final long ulong3 = Long.parseUnsignedLong("10723151780598845931");
 		for (int i=0; i < 100; ++i) {
 			seed += ulong1;
 			long z = seed;
