@@ -20,7 +20,7 @@ func main() {
 	cache := 10
 	tasks := 100
 	result := make(chan uint64, cache)
-	go random(1, result)
+	go random(0, result)
 	for i := 0; i < tasks; i++ {
 		value := <-result
 		fmt.Println(value)

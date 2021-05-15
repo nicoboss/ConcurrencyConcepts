@@ -3,14 +3,13 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
+import java.util.*;
 
-public class LoomFiberCounter {
-	public static void main(String[] args) {
+public class LoomFiberCounter_nCopies {
+	public static void main(String[] args) throws InterruptedException {
 		AtomicInteger count = new AtomicInteger();
 		ExecutorService pool = Executors.newVirtualThreadExecutor();
-		for (int i = 0; i < 1000000; ++i) {
-			pool.submit(() -> { count.incrementAndGet(); });
-		}
+		pool.invokeAll(Collections.nCopies(1000000, count::incrementAndGet));
 		pool.shutdown();
 		try {
 			if (!pool.awaitTermination(60, TimeUnit.SECONDS)) {

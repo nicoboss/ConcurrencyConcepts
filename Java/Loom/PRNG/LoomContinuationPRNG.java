@@ -6,7 +6,7 @@ public class LoomContinuationPRNG {
 	
     public static void main(String[] args) {
 		BlockingQueue<Long> queue = new ArrayBlockingQueue<>(10);
-		var a = Thread.startVirtualThread(() -> {
+		var fiber = Thread.startVirtualThread(() -> {
 			AtomicLong result = new AtomicLong();
 			var scope = new ContinuationScope("LoomPRNG");
 			var continuation = new Continuation(scope, () -> {

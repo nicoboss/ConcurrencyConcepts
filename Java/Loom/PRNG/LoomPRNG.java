@@ -5,7 +5,7 @@ public class LoomPRNG {
 	
     public static void main(String[] args) {
 		BlockingQueue<Long> queue = new ArrayBlockingQueue<>(10);
-		var a = Thread.startVirtualThread(() -> {
+		var fiber = Thread.startVirtualThread(() -> {
 			var seed = 1;
             final long ulong1 = Long.parseUnsignedLong("11400714819323198485");
             final long ulong2 = Long.parseUnsignedLong("13787848793156543929");

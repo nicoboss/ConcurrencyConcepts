@@ -1,6 +1,5 @@
 package re.nico.async;
 
-import org.asynchttpclient.AsyncHttpClient;
 import java.math.BigInteger;
 import java.util.Random;
 
@@ -9,8 +8,7 @@ import static org.asynchttpclient.Dsl.asyncHttpClient;
 public class CompletableFuture {
 
     public static String run() {
-        AsyncHttpClient asyncHttpClient = asyncHttpClient();
-        var completableFuture = asyncHttpClient.prepareGet("http://www.nicobosshard.ch/Hi.html").execute()
+        var completableFuture = asyncHttpClient().prepareGet("http://www.nicobosshard.ch/Hi.html").execute()
             .toCompletableFuture().whenComplete((result, ex) -> {
               System.out.println("[CompletableFuture] Fertig");
             });

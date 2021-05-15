@@ -53,9 +53,9 @@ public class AkkaPRNG {
             super(context);
         }
         @Override public Receive<RandomNumber> createReceive() {
-            return newReceiveBuilder().onMessage(RandomNumber.class, this::onGenerate).build();
+            return newReceiveBuilder().onMessage(RandomNumber.class, this::onGenerated).build();
         }
-        private Behavior<RandomNumber> onGenerate(RandomNumber command) {
+        private Behavior<RandomNumber> onGenerated(RandomNumber command) {
             getContext().getLog().info("Received {}", command.randomNumber);
             return this;
         }
@@ -79,9 +79,9 @@ public class AkkaPRNG {
             super(context);
         }
         @Override public Receive<Generate> createReceive() {
-            return newReceiveBuilder().onMessage(Generate.class, this::onGenerate).build();
+            return newReceiveBuilder().onMessage(Generate.class, this::onDoGenerate).build();
         }
-        private Behavior<Generate> onGenerate(Generate command) {
+        private Behavior<Generate> onDoGenerate(Generate command) {
             // Basieren auf C++ splitmix Generator von Arvid Gerstmann.
             long seed = command.seed;
             final long ulong1 = Long.parseUnsignedLong("11400714819323198485");

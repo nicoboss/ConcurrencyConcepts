@@ -19,6 +19,7 @@ func main() {
 		guard <- struct{}{}
 		wg.Add(1)
 		go func(url string) {
+			defer func() { <-guard }()
 			defer wg.Done()
 			response, err := http.Get(url)
 			if err != nil {
@@ -30,7 +31,6 @@ func main() {
 				log.Fatal("HTTP ReadAll error: ", err)
 			}
 			result <- string(bodyBytes)
-			<-guard
 		}(url)
 	}
 	fmt.Println("Task läuft...")

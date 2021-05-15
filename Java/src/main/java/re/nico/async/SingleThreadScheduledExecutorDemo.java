@@ -21,7 +21,7 @@ public class SingleThreadScheduledExecutorDemo {
     static BlockingQueue<String> blockingQueue = new LinkedBlockingDeque<>();
     public static void run() throws InterruptedException {
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
-        final ScheduledFuture<?> promise = executor.scheduleAtFixedRate(() -> {
+        final ScheduledFuture<?> promise = executor.scheduleWithFixedDelay(() -> {
             System.out.println("[SingleThreadScheduledExecutorDemo] Request um " + DateTimeFormatter.ofPattern("HH:mm:ss").format(LocalDateTime.now()) + " von " + Thread.currentThread().getName());
             try {
                 blockingQueue.add(new BufferedReader(new InputStreamReader(new URL("http://www.nicobosshard.ch/Hi.html").openStream())).lines().collect(Collectors.joining("\n")));

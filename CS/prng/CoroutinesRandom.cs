@@ -2,18 +2,15 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace CoroutinesRandom
-{
-    class CoroutinesRandom
-    {
+namespace CoroutinesRandom {
+    class CoroutinesRandom {
         //Basieren auf C++ splitmix PRNG von Arvid Gerstmann.
-        private static IEnumerable<ulong> prng(ulong seed)
-        {
+        private static IEnumerable<ulong> prng(ulong seed) {
             Console.WriteLine($"[CoroutinesRandom] [Coroutine] start: {Thread.CurrentThread.ManagedThreadId}");
-            while (true)
-            {
+            while (true) {
                 seed += 0x9E3779B97F4A7C15;
                 ulong z = seed;
                 z = (z ^ (z >> 30)) * 0xBF58476D1CE4E5B9;
@@ -23,29 +20,21 @@ namespace CoroutinesRandom
             }
         }
 
-        public static void Main()
-        {
-            ConcurrentQueue<ulong> result = new ConcurrentQueue<ulong>();
-
-            Task.Run(() =>
-              {
+        public static async Task Main() {
+            var result = Channel.CreateBounded<ulong>(20);
+            _ = Task.Run(async () => {
                   Console.WriteLine($"[CoroutinesRandom] async start: {Thread.CurrentThread.ManagedThreadId}");
-                  foreach (var randomNumber in prng(0))
-                  {
-                      while (result.Count > 10) System.Threading.Thread.Yield();
+                  foreach (var randomNumber in prng(0)) {
                       Console.WriteLine($"[CoroutinesRandom] async enqueue: {Thread.CurrentThread.ManagedThreadId}");
-                      result.Enqueue(randomNumber);
+                      await result.Writer.WriteAsync(randomNumber);
                   }
                   Console.WriteLine($"[CoroutinesRandom] async end: {Thread.CurrentThread.ManagedThreadId}");
               });
-
             Console.WriteLine($"[CoroutinesRandom] Main vor Task: {Thread.CurrentThread.ManagedThreadId}");
-            System.Threading.Thread.Sleep(10);
+            System.Threading.Thread.Sleep(100);
             Console.WriteLine($"[CoroutinesRandom] Main nach Task: {Thread.CurrentThread.ManagedThreadId}");
-            ulong randomNumber;
-            for (int i = 0; i < 100; ++i)
-            {
-                while (!result.TryDequeue(out randomNumber)) System.Threading.Thread.Yield();
+            for (int i = 0; i < 100; ++i) {
+                var randomNumber = await result.Reader.ReadAsync();
                 Console.WriteLine($"[CoroutinesRandom] main dequeue {randomNumber}: {Thread.CurrentThread.ManagedThreadId}");
             }
         }
