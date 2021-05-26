@@ -24,7 +24,7 @@ suspend fun coroutinesRandomYield() {
 	val cache = 10
 	val tasks = 100
 	val c = Channel<ULong>(cache)
-	go { random(1u, c) }
+	go { random(0u, c) }
 	for (i in 0..tasks) {
 		println(c.receive())
 	}

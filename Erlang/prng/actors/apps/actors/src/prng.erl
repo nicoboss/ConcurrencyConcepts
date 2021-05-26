@@ -1,3 +1,4 @@
+% Basieren auf C++ splitmix PRNG von Arvid Gerstmann.
 -module(prng).
 -export([prng/1]).
 send_msgs(_, 0, _) -> true; % Rekursionsabbruch

@@ -3,8 +3,9 @@ import channel.*
 import java.util.concurrent.Semaphore
 import kotlin.coroutines.*
 
-suspend fun httpGetMultibleBlocking(result: SendChannel<String>) {
+suspend fun httpGetMultibleBlocking(result: SendChannel<String>, guard: Semaphore) {
 	result.send(URL("http://www.nicobosshard.ch/Hi.html").readText())
+	guard.release()
 }
 suspend fun multibleCoroutinesBlocking() {
 	val tasks = 10        //10 Downloads
@@ -14,8 +15,7 @@ suspend fun multibleCoroutinesBlocking() {
 	mainBlocking {
 		for (i in 1..tasks) {
 			guard.acquireUninterruptibly()
-			go { httpGetMultible(result) }
-			guard.release()
+			go { httpGetMultible(result, guard) }
 		}
 	}
 	for (i in 0..tasks-1) {
