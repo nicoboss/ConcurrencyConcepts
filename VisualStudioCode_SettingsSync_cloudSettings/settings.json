@@ -1,0 +1,47 @@
+{
+    "arduino.path": "C:\\Program Files (x86)\\Arduino",
+    "arduino.additionalUrls": "https://dl.espressif.com/dl/package_esp32_index.json",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "java.refactor.renameFromFileExplorer": "autoApply",
+    "python.languageServer": "Pylance",
+    "prolog.executablePath": "C:\\Program Files\\swipl\\bin\\swipl.exe",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "redhat.telemetry.enabled": false,
+    "ShortcutMenuBar.userButton01Command": "",
+    "runTerminalCommand.commands": [
+
+        {
+            "command": "mvn exec:java -f C:\\Users\\Administrator\\Documents\\GitHub\\HSLU\\WIPRO\\examples\\Java\\pom.xml",
+            "name": "Run Maven Java",
+            "auto": true,
+            "preserve": true
+        },
+        {
+            "command": "mvn exec:java -f C:\\Users\\Administrator\\Documents\\GitHub\\HSLU\\WIPRO\\examples\\Kotlin\\pom.xml",
+            "name": "Run Maven Kotlin",
+            "auto": true,
+            "preserve": true
+        }
+    ],
+    "java.project.importOnFirstTimeStartup": "automatic",
+    "go.toolsManagement.autoUpdate": true,
+    "sync.gist": "2bcaf880877bdc6c43d287954ad6841c",
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "window.zoomLevel": 1,
+}

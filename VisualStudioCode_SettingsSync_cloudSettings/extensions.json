@@ -1,0 +1,412 @@
+[
+  {
+    "metadata": {
+      "id": "819a23e1-b6c6-41cf-9029-e653b537d996",
+      "publisherId": "ms-vscode.azure-account",
+      "publisherDisplayName": "ms-vscode"
+    },
+    "name": "azure-account",
+    "publisher": "ms-vscode",
+    "version": "0.9.8"
+  },
+  {
+    "metadata": {
+      "id": "3748ace4-53a0-47ef-92ac-5ded0cad48da",
+      "publisherId": "vsciot-vscode.azure-iot-toolkit",
+      "publisherDisplayName": "vsciot-vscode"
+    },
+    "name": "azure-iot-toolkit",
+    "publisher": "vsciot-vscode",
+    "version": "2.16.6"
+  },
+  {
+    "metadata": {
+      "id": "e337c67b-55c2-4fef-8949-eb260e7fb7fd",
+      "publisherId": "Shan.code-settings-sync",
+      "publisherDisplayName": "Shan"
+    },
+    "name": "code-settings-sync",
+    "publisher": "Shan",
+    "version": "3.4.3"
+  },
+  {
+    "metadata": {
+      "id": "690b692e-e8a9-493f-b802-8089d50ac1b2",
+      "publisherId": "ms-vscode.cpptools",
+      "publisherDisplayName": "ms-vscode"
+    },
+    "name": "cpptools",
+    "publisher": "ms-vscode",
+    "version": "1.3.1"
+  },
+  {
+    "metadata": {
+      "id": "d0bfc4ab-1d3a-4487-8782-7cf6027b4fff",
+      "publisherId": "ms-dotnettools.csharp",
+      "publisherDisplayName": "ms-dotnettools"
+    },
+    "name": "csharp",
+    "publisher": "ms-dotnettools",
+    "version": "1.23.12"
+  },
+  {
+    "metadata": {
+      "id": "5f7372bf-e0de-4eee-af69-6fb879d7d98c",
+      "publisherId": "pgourlain.erlang",
+      "publisherDisplayName": "pgourlain"
+    },
+    "name": "erlang",
+    "publisher": "pgourlain",
+    "version": "0.7.7"
+  },
+  {
+    "metadata": {
+      "id": "efcb43ca-77e6-43e4-8ddc-ada617cb34bd",
+      "publisherId": "redhat.fabric8-analytics",
+      "publisherDisplayName": "redhat"
+    },
+    "name": "fabric8-analytics",
+    "publisher": "redhat",
+    "version": "0.3.3"
+  },
+  {
+    "metadata": {
+      "id": "d6f6cfea-4b6f-41f4-b571-6ad2ab7918da",
+      "publisherId": "golang.go",
+      "publisherDisplayName": "golang"
+    },
+    "name": "go",
+    "publisher": "golang",
+    "version": "0.25.1"
+  },
+  {
+    "metadata": {
+      "id": "aead9e6c-3483-4ce4-a09f-843e25ce696f",
+      "publisherId": "haskell.haskell",
+      "publisherDisplayName": "haskell"
+    },
+    "name": "haskell",
+    "publisher": "haskell",
+    "version": "1.4.0"
+  },
+  {
+    "metadata": {
+      "id": "198a707e-28af-4e84-8610-6e2f628dd12d",
+      "publisherId": "redhat.java",
+      "publisherDisplayName": "redhat"
+    },
+    "name": "java",
+    "publisher": "redhat",
+    "version": "0.79.2"
+  },
+  {
+    "metadata": {
+      "id": "311c4d7f-e81f-47f8-9956-6a9919ddef43",
+      "publisherId": "ZainChen.json",
+      "publisherDisplayName": "ZainChen"
+    },
+    "name": "json",
+    "publisher": "ZainChen",
+    "version": "2.0.2"
+  },
+  {
+    "metadata": {
+      "id": "de056427-d058-4b9c-8408-54d6bfe742bf",
+      "publisherId": "tberman.json-schema-validator",
+      "publisherDisplayName": "tberman"
+    },
+    "name": "json-schema-validator",
+    "publisher": "tberman",
+    "version": "0.1.0"
+  },
+  {
+    "metadata": {
+      "id": "236ff452-49f5-47a4-8928-ab18f5b9c7bf",
+      "publisherId": "eriklynd.json-tools",
+      "publisherDisplayName": "eriklynd"
+    },
+    "name": "json-tools",
+    "publisher": "eriklynd",
+    "version": "1.0.2"
+  },
+  {
+    "metadata": {
+      "id": "6c2f1801-1e7f-45b2-9b5c-7782f1e076e8",
+      "publisherId": "ms-toolsai.jupyter",
+      "publisherDisplayName": "ms-toolsai"
+    },
+    "name": "jupyter",
+    "publisher": "ms-toolsai",
+    "version": "2021.6.832593372"
+  },
+  {
+    "metadata": {
+      "id": "c86bc8a9-fd3b-44db-b28a-2d146cb78d3c",
+      "publisherId": "fwcd.kotlin",
+      "publisherDisplayName": "fwcd"
+    },
+    "name": "kotlin",
+    "publisher": "fwcd",
+    "version": "0.2.22"
+  },
+  {
+    "metadata": {
+      "id": "d36bad53-910d-481a-a7ee-8992450665f6",
+      "publisherId": "mathiasfrohlich.Kotlin",
+      "publisherDisplayName": "mathiasfrohlich"
+    },
+    "name": "Kotlin",
+    "publisher": "mathiasfrohlich",
+    "version": "1.7.1"
+  },
+  {
+    "metadata": {
+      "id": "270c1d3b-a657-446f-83b8-ab32fd7af006",
+      "publisherId": "justusadam.language-haskell",
+      "publisherDisplayName": "justusadam"
+    },
+    "name": "language-haskell",
+    "publisher": "justusadam",
+    "version": "3.4.0"
+  },
+  {
+    "metadata": {
+      "id": "b63c44fd-0457-4696-99e9-dbfdf70d77de",
+      "publisherId": "ritwickdey.LiveServer",
+      "publisherDisplayName": "ritwickdey"
+    },
+    "name": "LiveServer",
+    "publisher": "ritwickdey",
+    "version": "5.6.1"
+  },
+  {
+    "metadata": {
+      "id": "f1f59ae4-9318-4f3c-a9b5-81b2eaa5f8a5",
+      "publisherId": "ms-python.python",
+      "publisherDisplayName": "ms-python"
+    },
+    "name": "python",
+    "publisher": "ms-python",
+    "version": "2021.5.842923320"
+  },
+  {
+    "metadata": {
+      "id": "93ce222b-5f6f-49b7-9ab1-a0463c6238df",
+      "publisherId": "ms-vscode-remote.remote-containers",
+      "publisherDisplayName": "ms-vscode-remote"
+    },
+    "name": "remote-containers",
+    "publisher": "ms-vscode-remote",
+    "version": "0.177.2"
+  },
+  {
+    "metadata": {
+      "id": "607fd052-be03-4363-b657-2bd62b83d28a",
+      "publisherId": "ms-vscode-remote.remote-ssh",
+      "publisherDisplayName": "ms-vscode-remote"
+    },
+    "name": "remote-ssh",
+    "publisher": "ms-vscode-remote",
+    "version": "0.65.4"
+  },
+  {
+    "metadata": {
+      "id": "bfeaf631-bcff-4908-93ed-fda4ef9a0c5c",
+      "publisherId": "ms-vscode-remote.remote-ssh-edit",
+      "publisherDisplayName": "ms-vscode-remote"
+    },
+    "name": "remote-ssh-edit",
+    "publisher": "ms-vscode-remote",
+    "version": "0.65.6"
+  },
+  {
+    "metadata": {
+      "id": "f0c5397b-d357-4197-99f0-cb4202f22818",
+      "publisherId": "ms-vscode-remote.remote-wsl",
+      "publisherDisplayName": "ms-vscode-remote"
+    },
+    "name": "remote-wsl",
+    "publisher": "ms-vscode-remote",
+    "version": "0.56.3"
+  },
+  {
+    "metadata": {
+      "id": "53a82c7f-372e-4c3d-97a7-8f05f5566c31",
+      "publisherId": "jerrygoyal.shortcut-menu-bar",
+      "publisherDisplayName": "jerrygoyal"
+    },
+    "name": "shortcut-menu-bar",
+    "publisher": "jerrygoyal",
+    "version": "3.0.3"
+  },
+  {
+    "metadata": {
+      "id": "ccdb378e-214a-468c-bfce-12192011281c",
+      "publisherId": "adrianwilczynski.terminal-commands",
+      "publisherDisplayName": "adrianwilczynski"
+    },
+    "name": "terminal-commands",
+    "publisher": "adrianwilczynski",
+    "version": "1.0.5"
+  },
+  {
+    "metadata": {
+      "id": "ac550d21-0dae-41d0-9157-9723f9332e44",
+      "publisherId": "arthurwang.vsc-prolog",
+      "publisherDisplayName": "arthurwang"
+    },
+    "name": "vsc-prolog",
+    "publisher": "arthurwang",
+    "version": "0.8.23"
+  },
+  {
+    "metadata": {
+      "id": "cf5a111e-3bd1-4e32-9526-20ec73780741",
+      "publisherId": "vsciot-vscode.vscode-arduino",
+      "publisherDisplayName": "vsciot-vscode"
+    },
+    "name": "vscode-arduino",
+    "publisher": "vsciot-vscode",
+    "version": "0.4.3"
+  },
+  {
+    "metadata": {
+      "id": "2f0eaac2-070b-4dc7-9b23-8dd4c970c11c",
+      "publisherId": "redhat.vscode-commons",
+      "publisherDisplayName": "redhat"
+    },
+    "name": "vscode-commons",
+    "publisher": "redhat",
+    "version": "0.0.6"
+  },
+  {
+    "metadata": {
+      "id": "d43dd18e-e989-4952-bb06-6b088d03d835",
+      "publisherId": "lucasazzola.vscode-csproj",
+      "publisherDisplayName": "lucasazzola"
+    },
+    "name": "vscode-csproj",
+    "publisher": "lucasazzola",
+    "version": "0.7.0"
+  },
+  {
+    "metadata": {
+      "id": "5539088f-4c45-4224-92bd-1004084c8eab",
+      "publisherId": "vsciot-vscode.vscode-iot-device-cube",
+      "publisherDisplayName": "vsciot-vscode"
+    },
+    "name": "vscode-iot-device-cube",
+    "publisher": "vsciot-vscode",
+    "version": "0.3.0"
+  },
+  {
+    "metadata": {
+      "id": "78fee370-f1d5-40c5-ae4c-a0c25afb3e5e",
+      "publisherId": "vsciot-vscode.vscode-iot-workbench",
+      "publisherDisplayName": "vsciot-vscode"
+    },
+    "name": "vscode-iot-workbench",
+    "publisher": "vsciot-vscode",
+    "version": "0.16.0"
+  },
+  {
+    "metadata": {
+      "id": "61fcd0cf-64d7-4836-8d6b-d55f4fb83281",
+      "publisherId": "vscjava.vscode-java-debug",
+      "publisherDisplayName": "vscjava"
+    },
+    "name": "vscode-java-debug",
+    "publisher": "vscjava",
+    "version": "0.34.0"
+  },
+  {
+    "metadata": {
+      "id": "7865e561-1c83-410e-9b99-aabada597a7e",
+      "publisherId": "vscjava.vscode-java-dependency",
+      "publisherDisplayName": "vscjava"
+    },
+    "name": "vscode-java-dependency",
+    "publisher": "vscjava",
+    "version": "0.18.4"
+  },
+  {
+    "metadata": {
+      "id": "96f11e1f-1a46-4592-b084-f025b2c2a81f",
+      "publisherId": "vscjava.vscode-java-pack",
+      "publisherDisplayName": "vscjava"
+    },
+    "name": "vscode-java-pack",
+    "publisher": "vscjava",
+    "version": "0.15.0"
+  },
+  {
+    "metadata": {
+      "id": "67c06b0d-1891-42ca-b2a8-113e79bff069",
+      "publisherId": "vscjava.vscode-java-test",
+      "publisherDisplayName": "vscjava"
+    },
+    "name": "vscode-java-test",
+    "publisher": "vscjava",
+    "version": "0.30.0"
+  },
+  {
+    "metadata": {
+      "id": "b0f06c6b-24fb-4d7b-bd79-bc5e2fa17312",
+      "publisherId": "vscjava.vscode-maven",
+      "publisherDisplayName": "vscjava"
+    },
+    "name": "vscode-maven",
+    "publisher": "vscjava",
+    "version": "0.31.0"
+  },
+  {
+    "metadata": {
+      "id": "364d2426-116a-433a-a5d8-a5098dc3afbd",
+      "publisherId": "ms-python.vscode-pylance",
+      "publisherDisplayName": "ms-python"
+    },
+    "name": "vscode-pylance",
+    "publisher": "ms-python",
+    "version": "2021.5.4"
+  },
+  {
+    "metadata": {
+      "id": "23d72dfc-8dd1-4e30-926e-8783b4378f13",
+      "publisherId": "ms-vscode-remote.vscode-remote-extensionpack",
+      "publisherDisplayName": "ms-vscode-remote"
+    },
+    "name": "vscode-remote-extensionpack",
+    "publisher": "ms-vscode-remote",
+    "version": "0.21.0"
+  },
+  {
+    "metadata": {
+      "id": "6703768d-d42f-474e-9f6e-5f288d53f6e8",
+      "publisherId": "redhat.vscode-xml",
+      "publisherDisplayName": "redhat"
+    },
+    "name": "vscode-xml",
+    "publisher": "redhat",
+    "version": "0.16.1"
+  },
+  {
+    "metadata": {
+      "id": "876e8f93-74d0-4f4f-91b7-34a09f19f444",
+      "publisherId": "VisualStudioExptTeam.vscodeintellicode",
+      "publisherDisplayName": "VisualStudioExptTeam"
+    },
+    "name": "vscodeintellicode",
+    "publisher": "VisualStudioExptTeam",
+    "version": "1.2.14"
+  },
+  {
+    "metadata": {
+      "id": "0cb81da2-1880-4755-9995-0ae9cc728e20",
+      "publisherId": "DotJoshJohnson.xml",
+      "publisherDisplayName": "DotJoshJohnson"
+    },
+    "name": "xml",
+    "publisher": "DotJoshJohnson",
+    "version": "2.5.1"
+  }
+]
